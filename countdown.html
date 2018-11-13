@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title></title>
+ <style>
+  *{
+   margin: 0;
+   padding:0;
+  }
+  p {
+   font-size: 95px;
+   text-align: center;
+  }
+  p span {
+   color: red;
+  }
+  p span.time {
+   color: black
+  }
+ </style>
+</head>
+<body>
+<p>距离2018年还有</p>
+<p class="tBox"></p>
+<p class="tBox"></p>
+<script src="./countTime.js"></script>
+<script>
+    // /*第一个倒计时*/
+	// var data = {
+	// 	begain:1542071893,
+	// 	end:1542073740,
+	// 	eindex:0,
+	// 	style:"时分秒",
+    // 	days:false,
+    //  boxClass:'tBox'
+	// }
+    // count.count(data);
+
+    // /*第一个倒计时*/
+    // var data = {
+	// 	begain:1542073740,
+	// 	end:1542073740,
+	// 	eindex:1,
+	// 	style:"时分秒",
+    // 	days:false,
+    //  boxClass:'tBox'
+	// }
+	// count.count(data,function(){
+    //     //倒计时借宿之后执行的函数            
+    //     document.getElementsByClassName('tBox')[1].style.display = 'none';
+    // });
+    
+    //通过for循环使用
+    var data = null;
+    for (var i = 0; i < 2; i++) {
+        var data = {
+                begain:1542078000,
+                eindex:i,
+                style:"时分秒",
+                days:false,
+                boxClass:'tBox'
+            }
+        if (i == 0) {
+            data.end = 1542078060;
+        }else{
+            data.end = 1542078120;
+        }
+        count.count(data,function(res){
+            document.getElementsByClassName(data.boxClass)[res].style.display = 'none';
+        });
+    }
+</script>
+</body>
+</html>
